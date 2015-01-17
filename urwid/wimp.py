@@ -44,7 +44,7 @@ class SelectableIcon(Text):
         displayed at a fixed location in the text when in focus.
         This widget has no special handling of keyboard or mouse input.
         """
-        self.__super.__init__(text)
+        super().__init__(text)
         self._cursor_position = cursor_position
 
     def render(self, size, focus=False):

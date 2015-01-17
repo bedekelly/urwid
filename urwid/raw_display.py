@@ -664,10 +664,11 @@ class Screen(BaseScreen, RealTerminal):
         self._setup_G1_done = True
 
 
-    def draw_screen(self, (maxcol, maxrow), r ):
+    def draw_screen(self, max, r ):
         """Paint screen with rendered canvas."""
+        maxcol, maxrow = max
         assert self._started
-
+        
         assert maxrow == r.rows()
 
         # quick return if nothing has changed
@@ -935,7 +936,7 @@ class Screen(BaseScreen, RealTerminal):
                     bg = "5;%d" % (a.background_number - 8 + 40)
                 else:
                     # this doesn't work on most terminals
-                    bg = "%d" % (a.background_number - 8 + 100)
+                    bg = "%d" % (a.background_number + 100)
             else:
                 bg = "%d" % (a.background_number + 40)
         else:

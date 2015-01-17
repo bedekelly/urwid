@@ -832,7 +832,7 @@ class Text(Widget):
         >>> t.attrib
         [('bold', 5)]
         """
-        self.__super.__init__()
+        super().__init__()
         self._cache_maxcol = None
         self.set_text(markup)
         self.set_layout(align, wrap, layout)
@@ -858,7 +858,7 @@ class Text(Widget):
 
     def _invalidate(self):
         self._cache_maxcol = None
-        self.__super._invalidate()
+        super()._invalidate()
 
     def set_text(self,markup):
         """
