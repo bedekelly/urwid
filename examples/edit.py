@@ -123,7 +123,7 @@ class LineWalker(urwid.ListWalker):
         above.set_edit_text(above.edit_text + focus.edit_text)
         del self.lines[self.focus]
         self.focus -= 1
-
+        
     def combine_focus_with_next(self):
         """Combine the focus edit widget with the one below."""
 
